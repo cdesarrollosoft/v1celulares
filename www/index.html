@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Copyright © 2012-2015, Intel Corporation. All rights reserved.
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+        <title>Blank App Designer Packaged Web App Project Template</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+        <link rel="stylesheet" href="css/index/styles/jquery-ui.css">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+        <!-- Recommended location for your JavaScript libraries -->
+        <!-- These library references (below) are just examples to give you the general idea... -->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+        <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <!--            
+            You may substitute jQuery for the App Framework selector library.
+            See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+        -->
+        <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+    </head>
+
+    <body id="afui">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <header class="wrapping-col wrap-element uib_w_1" data-uib="app_framework/header" data-ver="2" id="af-header-0">
+            <h1>V1 Celulares</h1>
+        </header>
+        <div id="content" class="uwrap">
+            <div class="upage panel" id="mainpage" data-header="af-header-0" data-footer="none">
+                <div class="upage-content ac0 content-area vertical-col" id="principal">
+                    <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+
+                                <div class="widget uib_w_2 d-margins text" data-uib="media/text" data-ver="0">
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div>
+                                        <p>Introduzca su busqueda</p>
+                                    </div>
+                                </div>
+                                <div class="table-thing with-label widget uib_w_3 d-margins" data-uib="app_framework/input" data-ver="1">
+                                    <input class="wide-control" placeholder="Introduzca una palabra" type="text" id="texto">
+                                </div>
+                                <div class="widget uib_w_4 d-margins text" data-uib="media/text" data-ver="0">
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div>
+                                        <p>Seleccione una opcion</p>
+                                    </div>
+                                </div>
+                                <div class="uib-grid widget grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                                    <div align="center" class="uib-grid-row">
+                                        <div align="center" class="uib-grid-cell widget-container textcenter">Busqueda</div>
+                                        <div align="center" class="uib-grid-cell widget-container textcenter">Resultado</div>
+                                    </div>
+                                    <div class="uib-grid-row">
+                                        <div align="center" class="uib-grid-cell widget-container">
+                                            <div align="center" class="table-thing with-label widget uib_w_11 d-margins textRadio" data-uib="app_framework/radio_button_group" data-ver="1" data-child-name="af-group-0" id="opciones">
+                                                <div align="center" class="wide-control">
+                                                    <div align="center" class="widget uib_w_12" data-uib="app_framework/radio_button" data-ver="1">
+                                                        <input type="radio" id="af-radio-0" name="af-group-0" value="a" checked="">
+                                                        <label class="content-box" for="af-radio-0">Opcion A</label>
+                                                    </div>
+                                                    <div align="center" class="widget uib_w_13" data-uib="app_framework/radio_button" data-ver="1">
+                                                        <input type="radio" id="af-radio-1" name="af-group-0" value="b">
+                                                        <label class="content-box" for="af-radio-1">Opcion B</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       <div align="center" class="uib-grid-cell widget-container">
+                                            <div align="center" class="table-thing with-label widget uib_w_11 d-margins" data-uib="app_framework/radio_button_group" data-ver="1" data-child-name="af-group-0" id="opciones">
+                                                <div align="center" class="wide-control">
+                                                    <div align="center" class="widget uib_w_12" data-uib="app_framework/radio_button" data-ver="2">
+                                                        <input type="radio" id="af-radio-2" name="af-group-1" value="a" checked="">
+                                                        <label class="content-box" for="af-radio-2">Opcion A</label>
+                                                    </div>
+                                                    <div align="center" class="widget uib_w_13" data-uib="app_framework/radio_button" data-ver="2">
+                                                        <input type="radio" id="af-radio-3" name="af-group-1" value="b">
+                                                        <label class="content-box" for="af-radio-3">Opcion B</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="button widget uib_w_6 d-margins" data-uib="app_framework/button" data-ver="1">Buscar</a><a class="button widget uib_w_7 d-margins" data-uib="app_framework/button" data-ver="1">Limpiar</a><span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+                </div>
+                <div id="resultado" class="upage-content vertical-col left hidden">
+                    <div class="widget uib_w_10 d-margins text" data-uib="media/text" data-ver="0">
+                        <div class="widget-container left-receptacle"></div>
+                        <div class="widget-container right-receptacle"></div>
+                        <div>
+                            <p>Resultado de la Busqueda</p>
+                        </div>
+                    </div>
+                    <div id="tabla"></div>
+                    <a class="button widget uib_w_9 d-margins" data-uib="app_framework/button" data-ver="1">Volver</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- jquery ui -->
+    <script type="application/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="application/javascript" src="js/jquery-ui.js"></script>
+</html>
